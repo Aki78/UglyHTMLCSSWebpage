@@ -12,13 +12,83 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+#map {
+  height: 400px;
+  width: 100%;
+}
 
 /* Style the header */
 .header {
+  overflow: hidden;
+  <!--position: fixed;-->
   background-color: #f1f1f1;
-  padding: 30px;
+  padding: 10px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
   text-align: center;
-  font-size: 35px;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 20px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  <!--background-color: dodgerblue;-->
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+.center{
+display: block;
+margin-top: 40%;
+margin-bottom: 40%;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+.productcenter{
+display: block;
+margin-top: 40%;
+margin-bottom: 40%;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+.productdescription{
+font-size:15px;
+}
+
+.footproduct{
+font-size:15px;
+opacity: 0.3;
+}
+
+.productitem{
+ display: block;
+margin-top: 10%;
+margin-bottom: 40%;
+margin-left: 10%;
+margin-right: 10%;
+<!--width: 50%;-->
 }
 
 /* Container for flexboxes */
@@ -33,15 +103,12 @@ body {
   -ms-flex: 1;
   flex: 1;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  margin: 10px;
+  <!--border: 10px;-->
+  height: 500px; /* Should be removed. Only for demonstration */
 }
 
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
@@ -51,27 +118,94 @@ body {
   }
 }
 </style>
+
 </head>
 <body>
 
-<h2>CSS Template using Flexbox</h2>
-<p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
-<p>Resize the browser window to see the responsive effect.</p>
-<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 eand earlier versions.</p>
-
 <div class="header">
-  <h2>Header</h2>
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#products">Product</a>
+    <a href="#contact">Contact</a>
+  </div>
 </div>
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">Column</div>
-  <div class="column" style="background-color:#bbb;">Column</div>
-  <div class="column" style="background-color:#ccc;">Column</div>
+        <img class="center" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+
+<div id="products">
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <div class="productitem">
+                <p>Product 1</p>
+                <img class="productcenter" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                <p class="footproduct">product 1</p>
+                <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="column" style="background-color:#aaa;">
+            <div class="productitem">
+                <p>Product 2</p>
+                <img class="productcenter" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                <p class="footproduct">product 2</p>
+                <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="column" style="background-color:#aaa;">
+            <div class="productitem">
+                <p>Product 3</p>
+                <img class="productcenter" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                <p class="footproduct">product 3</p>
+                <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-<div class="footer">
-  <p>Footer</p>
+
+<div id="contact">
+    <h2>Contact us</h2>
+    <p class="contactinfo">
+    <i>
+    <span>Visitus at:</span>
+    </br>
+    <span>CompanyX</span>
+    </br>
+    <span>Karaportti 2</span>
+    </br>
+    <span>02340 Espoo</span>
+    </br>
+    <span>Finland</span>
+    </br>
+    <span>Email: <b> info@metropolia.fi </b></span>
+    </br>
+    <span>Phone: <b>+358 (0)40123233</b></span>
+    </i>
+    </p>
 </div>
+
+      <div id="mapdiv"></div>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <script>
+    map = new OpenLayers.Map("mapdiv");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var zoom=16;
+
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+
+    markers.addMarker(new OpenLayers.Marker(lonLat));
+
+    map.setCenter (lonLat, zoom);
+  </script>
 
 </body>
 </html>
