@@ -12,9 +12,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-#map {
-  height: 400px;
-  width: 100%;
+.map {
+  height: 200px;
+  width: 500px;
+}
+.mapbox {
+  width: 50%;
 }
 
 /* Style the header */
@@ -88,7 +91,6 @@ margin-top: 10%;
 margin-bottom: 40%;
 margin-left: 10%;
 margin-right: 10%;
-<!--width: 50%;-->
 }
 
 /* Container for flexboxes */
@@ -104,7 +106,6 @@ margin-right: 10%;
   flex: 1;
   padding: 10px;
   margin: 10px;
-  <!--border: 10px;-->
   height: 500px; /* Should be removed. Only for demonstration */
 }
 
@@ -185,13 +186,13 @@ margin-right: 10%;
     </p>
 </div>
 
-      <div id="mapdiv"></div>
+      <div id="mapdiv" class="map"></div>
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
     map = new OpenLayers.Map("mapdiv");
     map.addLayer(new OpenLayers.Layer.OSM());
 
-    var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 )
+    var lonLat = new OpenLayers.LonLat( 24.7570534, 60.2240516)
           .transform(
             new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
             map.getProjectionObject() // to Spherical Mercator Projection
