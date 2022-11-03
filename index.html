@@ -12,6 +12,33 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+/*Fixed Navbar*/
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+
 .map {
   height: 200px;
   width: 500px;
@@ -60,8 +87,8 @@ body {
 
 .center{
 display: block;
-margin-top: 40%;
-margin-bottom: 40%;
+margin-top: 10%;
+margin-bottom: 10%;
 margin-left: auto;
 margin-right: auto;
 width: 50%;
@@ -98,6 +125,10 @@ margin-right: 10%;
   display: -webkit-flex;
   display: flex;
 }
+.contact_row {
+display: flex;
+padding-top: 10rem;
+}
 
 /* Create three equal columns that sits next to each other */
 .column {
@@ -106,10 +137,15 @@ margin-right: 10%;
   flex: 1;
   padding: 10px;
   margin: 10px;
-  height: 500px; /* Should be removed. Only for demonstration */
+  height: 100%; /* Should be removed. Only for demonstration */
 }
 
 
+
+.contact_column {
+      float: left;
+  width: 50%;
+}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
@@ -123,7 +159,7 @@ margin-right: 10%;
 </head>
 <body>
 
-<div class="header">
+<div class="navbar">
   <a href="#default" class="logo">CompanyLogo</a>
   <div class="header-right">
     <a class="active" href="#home">Home</a>
@@ -131,10 +167,13 @@ margin-right: 10%;
     <a href="#contact">Contact</a>
   </div>
 </div>
-
+<div style="margin-top:10%;" >
+        <h1> Some text </h1>
         <img class="center" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+        <p style="text-align: center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
 
-<div id="products">
+<!--<div id="products">-->
     <div class="row">
         <div class="column" style="background-color:#aaa;">
             <div class="productitem">
@@ -162,9 +201,10 @@ margin-right: 10%;
         </div>
 
     </div>
-</div>
+<!--</div>-->
 
-
+<div class="contact_row">
+  <div class="contact_column">
 <div id="contact">
     <h2>Contact us</h2>
     <p class="contactinfo">
@@ -186,7 +226,13 @@ margin-right: 10%;
     </p>
 </div>
 
+  </div>
+  <div class="contact_column">
+
       <div id="mapdiv" class="map"></div>
+  </div>
+</div> 
+
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
     map = new OpenLayers.Map("mapdiv");
