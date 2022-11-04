@@ -5,8 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+@font-face {
+      font-family: 'bradhi';
+    src: url('./fonts/BRADHI.ttf');
+}
+
 * {
   box-sizing: border-box;
+  font:bradhi;
+  font-family: bradhi;
+
 }
 
 body {
@@ -20,6 +29,29 @@ body {
   width: 100%; /* Full width */
 }
 
+/*#home{
+    background-image:url(./img/background.svg);
+    margin-left: 2%;
+    margin-right: 2%;
+}*/
+
+.page{
+    background-image:url(./img/background.svg);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-button: 5%;
+    text-align: center;
+    min-height: 5000 px;
+}
+
+.logo {
+}
+.image_box{
+    width:100%;
+    height: 100%;
+}
 /* Links inside the navbar */
 /*Fixed Navbar*/
 .navbar a {
@@ -50,7 +82,6 @@ body {
 /* Style the header */
 .header {
   overflow: hidden;
-  <!--position: fixed;-->
   background-color: #f1f1f1;
   padding: 10px 10px;
 }
@@ -67,8 +98,8 @@ body {
 }
 
 .header a.logo {
-  font-size: 25px;
   font-weight: bold;
+  height: 50px;
 }
 
 .header a:hover {
@@ -77,12 +108,25 @@ body {
 }
 
 .header a.active {
-  <!--background-color: dodgerblue;-->
   color: white;
 }
 
 .header-right {
   float: right;
+  margin-top:1%;
+}
+.header_component {
+    margin-right:10px;
+    padding-right:10px;
+}
+.center_image{
+    background: white;
+display: block;
+margin-top: 10%;
+margin-bottom: 10%;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
 }
 
 .center{
@@ -95,6 +139,7 @@ width: 50%;
 }
 
 .productcenter{
+    background:white;
 display: block;
 margin-top: 40%;
 margin-bottom: 40%;
@@ -125,8 +170,16 @@ margin-right: 10%;
   display: -webkit-flex;
   display: flex;
 }
+
+.product_row {
+  display: -webkit-flex;
+  display: flex;
+  margin-left:5%;
+  margin-right:5%;
+}
 .contact_row {
-display: flex;
+  display: -webkit-flex;
+  display: flex;
 padding-top: 10rem;
 }
 
@@ -140,16 +193,36 @@ padding-top: 10rem;
   height: 100%; /* Should be removed. Only for demonstration */
 }
 
+.product_column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 100%; 
+}
 
 
 .contact_column {
-      float: left;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex:1;
+  float: left;
   width: 50%;
+  background: white;
+  margin-left:10%;
+  margin-right:10%;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
   .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .product_row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
@@ -159,79 +232,81 @@ padding-top: 10rem;
 </head>
 <body>
 
+
+
 <div class="navbar">
-  <a href="#default" class="logo">CompanyLogo</a>
+
+
+  <a  class="logo" href="#default"><img class="image_box"  src="img/logo.svg" alt="W3Schools.com"></a>
+
   <div class="header-right">
-    <a class="active" href="#home">Home</a>
-    <a href="#products">Product</a>
-    <a href="#contact">Contact</a>
+    <a class="header_component" href="#home">Home</a>
+    <a class="header_component" href="#products">Product</a>
+    <a class="header_component" href="#contact">Contact</a>
   </div>
 </div>
-<div style="margin-top:10%;" >
-        <h1> Some text </h1>
-        <img class="center" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+<div id="home" class="page" style="margin-top:10%;" >
+        <h1 > Some text </h1>
+        <img class="center_image" src="img/some_image.svg" alt="W3Schools.com">
         <p style="text-align: center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
-
-<!--<div id="products">-->
-    <div class="row">
-        <div class="column" style="background-color:#aaa;">
+      <audio id="my_audio" src="./sounds/bruh.mp3" loop="loop"></audio>
+      <div id="products"></div>
+<div  class="page">
+    <div class="product_row">
+        <div class="product_column" style="background-color:#aaa;">
             <div class="productitem">
                 <p>Product 1</p>
-                <img class="productcenter" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                <img class="productcenter" src="img/product.svg" alt="W3Schools.com">
                 <p class="footproduct">product 1</p>
                 <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="column" style="background-color:#aaa;">
+        <div class="product_column" style="background-color:#aaa;">
             <div class="productitem">
                 <p>Product 2</p>
-                <img class="productcenter" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                <img class="productcenter" src="img/product.svg" alt="W3Schools.com">
                 <p class="footproduct">product 2</p>
                 <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="column" style="background-color:#aaa;">
+        <div class="product_column" style="background-color:#aaa;">
             <div class="productitem">
                 <p>Product 3</p>
-                <img class="productcenter" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                <img class="productcenter" src="img/product.svg" alt="W3Schools.com">
                 <p class="footproduct">product 3</p>
                 <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
 
     </div>
-<!--</div>-->
-
-<div class="contact_row">
-  <div class="contact_column">
-<div id="contact">
-    <h2>Contact us</h2>
-    <p class="contactinfo">
-    <i>
-    <span>Visitus at:</span>
-    </br>
-    <span>CompanyX</span>
-    </br>
-    <span>Karaportti 2</span>
-    </br>
-    <span>02340 Espoo</span>
-    </br>
-    <span>Finland</span>
-    </br>
-    <span>Email: <b> info@metropolia.fi </b></span>
-    </br>
-    <span>Phone: <b>+358 (0)40123233</b></span>
-    </i>
-    </p>
 </div>
-
-  </div>
+<div class="page">
+  <div class="contact_row" id="contact">
+    <div class="contact_column">
+        <h2>Contact us</h2>
+        <p class="contactinfo">
+        <i>
+        <span>Visitus at:</span>
+        </br>
+        <span>CompanyX</span>
+        </br>
+        <span>Karaportti 2</span>
+        </br>
+        <span>02340 Espoo</span>
+        </br>
+        <span>Finland</span>
+        </br>
+        <span>Email: <b> info@metropolia.fi </b></span>
+        </br>
+        <span>Phone: <b>+358 (0)40123233</b></span>
+        </i>
+        </p>
+    </div>
   <div class="contact_column">
-
-      <div id="mapdiv" class="map"></div>
+    <div id="mapdiv" class="map"></div>
   </div>
-</div> 
+  </div>
 
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
@@ -252,8 +327,29 @@ padding-top: 10rem;
     markers.addMarker(new OpenLayers.Marker(lonLat));
 
     map.setCenter (lonLat, zoom);
+
+
+
+const audio = new Audio("./sounds/bruh.mp3");
+const buttons = document.querySelectorAll("logo");
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    audio.play();
+  });
+});
+
+window.onload = function () {
+    if (localStorage.getItem("hasCodeRunBefore") === null) {
+         document.getElementById("my_audio").play();
+        localStorage.setItem("hasCodeRunBefore", true);
+    }
+}
   </script>
+
 
 </body>
 </html>
+
+
+
 
