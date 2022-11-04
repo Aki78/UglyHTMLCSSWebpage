@@ -127,6 +127,13 @@ padding: 0% 5% 0%;
 width: 50%;
 }
 
+.center_product{
+background: white;
+margin: 1% 1%;
+padding: 2% 5% ;
+width: 80%;
+}
+
 .center{
 display: block;
 margin-top: 10%;

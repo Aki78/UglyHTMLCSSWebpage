@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>Some Ugly Site</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./index.css">
 <script type="text/javascript" src="./js/test.js"></script>
 </head>
-<body id="top" ">
+<body id="top" >
 
 
 
@@ -31,6 +31,7 @@
       <audio id="my_audio" src="./sounds/bruh.mp3" loop="loop"></audio>
       <div id="products"></div>
 <div  class="page">
+     <img class="center_product" src="img/some_other_image.svg" alt="W3Schools.com">
     <div class="product_row">
         <div class="product_column" style="background-color:#aaa;">
             <div class="productitem">
@@ -88,8 +89,8 @@
 
     var lonLat = new OpenLayers.LonLat( 24.7570534, 60.2240516)
           .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
+            new OpenLayers.Projection("EPSG:4326"), 
+            map.getProjectionObject()
           );
 
     var zoom=16;
@@ -112,7 +113,6 @@ function playclip() {
           audio.volume = 0.2;
     audio.play();
 }
-
   </script>
 
 <audio>
