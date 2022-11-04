@@ -5,20 +5,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./index.css">
+<!--<script type="text/javascript" src="sound-onclick.js"></script>-->
 </head>
-<body id="top">
+<body id="top" ">
 
 
 
 <div class="navbar" id="navbar">
 
 
-  <a  class="logo" href="#top"><img class="image_box"  src="img/logo.svg" alt="W3Schools.com"></a>
+  <a OnClick ="playclip()"  class="logo" href="#top"><img class="image_box"  src="img/logo.svg" alt="W3Schools.com"></a>
 
   <div class="header-right">
-    <a class="header_component" href="#top">Home</a>
-    <a class="header_component" href="#products">Product</a>
-    <a class="header_component" href="#contact">Contact</a>
+    <a OnClick ="playclip()"  class="header_component" href="#top">Home</a>
+    <a OnClick ="playclip()" class="header_component" href="#products">Product</a>
+    <a OnClick ="playclip()" class="header_component" href="#contact">Contact</a>
   </div>
 </div>
 
@@ -82,6 +83,7 @@
 
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
+      audioElement.loop = false;
     map = new OpenLayers.Map("mapdiv");
     map.addLayer(new OpenLayers.Layer.OSM());
 
@@ -101,12 +103,25 @@
 
 window.addEventListener("hashchange", function () {
     window.scrollTo(window.scrollX, window.scrollY - 50);
+          playclip();
 });
+
+
+function playclip() {
+    var audio = document.getElementsByTagName("audio")[0];
+          audio.loop = false;
+          audio.volume = 0.2;
+    audio.play();
+}
 
   </script>
 
+<audio>
+<source src="./sounds/bruh.mp3" type="audio/mpeg">
+</audio>
 
 </body>
+<div id="sounddiv"><bgsound id="sound"></div>
 
 </html>
 
