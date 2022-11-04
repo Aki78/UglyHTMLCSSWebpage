@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./index.css">
-<!--<script type="text/javascript" src="sound-onclick.js"></script>-->
+<script type="text/javascript" src="./js/test.js"></script>
 </head>
 <body id="top" ">
 
@@ -34,7 +34,7 @@
     <div class="product_row">
         <div class="product_column" style="background-color:#aaa;">
             <div class="productitem">
-                <p>Product 1</p>
+                <p class="product_text">Product 1</p>
                 <img class="productcenter" src="img/product.svg" alt="W3Schools.com">
                 <p class="footproduct">product 1</p>
                 <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -42,7 +42,7 @@
         </div>
         <div class="product_column" style="background-color:#bbb;">
             <div class="productitem">
-                <p>Product 2</p>
+                <p class="product_text" >Product 2</p>
                 <img class="productcenter" src="img/product.svg" alt="W3Schools.com">
                 <p class="footproduct">product 2</p>
                 <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -50,7 +50,7 @@
         </div>
         <div class="product_column" style="background-color:#aaa;">
             <div class="productitem">
-                <p>Product 3</p>
+                <p class="product_text"  >Product 3</p>
                 <img class="productcenter" src="img/product.svg" alt="W3Schools.com">
                 <p class="footproduct">product 3</p>
                 <p class="productdescription"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -83,7 +83,6 @@
 
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
-      audioElement.loop = false;
     map = new OpenLayers.Map("mapdiv");
     map.addLayer(new OpenLayers.Layer.OSM());
 
