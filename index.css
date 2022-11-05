@@ -46,7 +46,37 @@ body {
 }
 
 .large_text {
+    animation: pulse 0.9s infinite;
     font-size: 50px;
+}
+@keyframes pulse {
+    from {
+        transform : scale(1);
+        opacity   : 1;
+    }
+    50% {
+        transform : scale(0.75);
+        opacity   : 0.25;
+    }
+    to {
+        transform : scale(1);
+        opacity   : 1;
+    }
+}
+
+@keyframes pulse1 {
+    from {
+        transform : scale(1);
+        opacity   : 1;
+    }
+    50% {
+        transform : scale(0.75);
+        opacity   : 0.25;
+    }
+    to {
+        transform : scale(1);
+        opacity   : 1;
+    }
 }
 
 .product_text{
@@ -121,6 +151,7 @@ body {
 }
 
 .center_image{
+    animation: pulse 2.6s infinite;
 background: white;
 margin: 1% 1%;
 padding: 0% 5% 0%;
@@ -128,6 +159,7 @@ width: 50%;
 }
 
 .center_product{
+    animation: pulse 0.6s infinite;
 background: white;
 margin: 1% 1%;
 padding: 2% 5% ;
@@ -144,6 +176,7 @@ width: 50%;
 }
 
 .productcenter{
+    animation: pulse 1s infinite;
     background:white;
 display: block;
 margin-top: 40%;
