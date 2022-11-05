@@ -86,6 +86,7 @@
 
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
+
     map = new OpenLayers.Map("mapdiv");
     map.addLayer(new OpenLayers.Layer.OSM());
 
@@ -112,8 +113,13 @@ window.addEventListener("hashchange", function () {
 function playclip() {
     var audio = document.getElementsByTagName("audio")[0];
           audio.loop = false;
-          audio.volume = 0.2;
+          audio.volume = 0.3;
     audio.play();
+
+          const audio2 = new Audio('./sounds/output.mp3');
+          audio2.loop = true;
+          audio2.volume = 0.02;
+          audio2.play();
 }
   </script>
 
