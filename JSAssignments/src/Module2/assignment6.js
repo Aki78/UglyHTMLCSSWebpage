@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const M1Assignment6 = () => {
+const N2Assignment6 = () => {
     const [number, setNumber] = useState("");
     const [c, setC] = useState("");
 
@@ -46,6 +46,6 @@ const M1Assignment6 = () => {
 
 }
 
-export default M1Assignment6;
+export default N2Assignment6;
 
 

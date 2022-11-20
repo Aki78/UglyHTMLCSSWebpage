@@ -1,6 +1,6 @@
 import { useState } from "react";
 import isLeapYear from "leap-year";
-const M1Assignment5 = () => {
+const N2Assignment5 = () => {
     const [year, setYear] = useState("");
     console.log("is leapyear", toString(isLeapYear(2000)))
 
@@ -18,6 +18,6 @@ const M1Assignment5 = () => {
     )
 }
 
-export default M1Assignment5;
+export default N2Assignment5;
 
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import isLeapYear from "leap-year";
 import isPrime from "is-prime-number";
 
-const M1Assignment9 = () => {
+const N2Assignment9 = () => {
     const [num, setNum] = useState("0");
     console.log(isPrime(3))
 
@@ -17,6 +17,6 @@ const M1Assignment9 = () => {
 
 }
 
-export default M1Assignment9;
+export default N2Assignment9;
 
 

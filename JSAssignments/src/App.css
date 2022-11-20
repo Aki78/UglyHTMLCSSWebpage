@@ -6,11 +6,33 @@
   height: 40vmin;
   pointer-events: none;
 }
+.nav__bar{
+  list-style: none;
+}
+.left {
+  width: 20%;
+  float: left;
+}
+.right {
+    height: 50px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.nav__bar li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
 }
 
 .App-header {

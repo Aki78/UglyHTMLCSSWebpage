@@ -1,4 +1,4 @@
-const M1Assignment1 = () => {
+const N2Assignment1 = () => {
     console.log("I'm printing to the console!")
     return (
         <>
@@ -9,7 +9,7 @@ const M1Assignment1 = () => {
 }
 
 
-export default M1Assignment1;
+export default N2Assignment1;
 
 
 

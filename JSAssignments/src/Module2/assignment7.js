@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const M1Assignment7 = () => {
+const N2Assignment7 = () => {
     const [rolls, setRolls] = useState("");
     const [dices, setDices] = useState("");
 
@@ -34,6 +34,6 @@ return (
 
 }
 
-export default M1Assignment7;
+export default N2Assignment7;
 
 

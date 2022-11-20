@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import isLeapYear from "leap-year";
 
-const M1Assignment8 = () => {
+const N2Assignment8 = () => {
     const [year1, setYear1] = useState("0");
     const [year2, setYear2] = useState("1");
 
@@ -44,6 +44,6 @@ const M1Assignment8 = () => {
 
 }
 
-export default M1Assignment8;
+export default N2Assignment8;
 
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const M1Assignment3 = () => {
+const N2Assignment3 = () => {
     const [valA, setValA] = useState("")
     const [valB, setValB] = useState("")
     const [valC, setValC] = useState("")
@@ -18,6 +18,6 @@ const M1Assignment3 = () => {
     )
 }
 
-export default M1Assignment3;
+export default N2Assignment3;
 
 

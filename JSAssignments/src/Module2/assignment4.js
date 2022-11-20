@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const M1Assignment4 = () => {
+const N2Assignment4 = () => {
     const [studnetName, setStudentName] = useState("");
     const [house, setHouse] = useState("");
 
@@ -26,6 +26,6 @@ const M1Assignment4 = () => {
     )
 }
 
-export default M1Assignment4;
+export default N2Assignment4;
 
 

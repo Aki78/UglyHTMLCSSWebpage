@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ReactDOM } from "react-dom/client";
 
-const M1Assignment2 = () => {
+const N2Assignment2 = () => {
     const [name, setName] = useState("")
     return (
         <>
@@ -17,6 +17,6 @@ const M1Assignment2 = () => {
     )
 }
 
-export default M1Assignment2;
+export default N2Assignment2;
 
 
