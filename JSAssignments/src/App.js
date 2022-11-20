@@ -26,16 +26,16 @@ const App = () => {
       <Router >
         <div class="nav__bar">
           <ul>
-            <li><Link to="Assignment1" >1</Link></li>
-            <li><Link to="Assignment2" >2</Link></li>
-            <li><Link to="Assignment3" >3</Link></li>
-            <li><Link to="Assignment4" >4</Link></li>
-            <li><Link to="Assignment5" >5</Link></li>
-            <li><Link to="Assignment6" >6</Link></li>
-            <li><Link to="Assignment7" >7</Link></li>
-            <li><Link to="Assignment8" >8</Link></li>
-            <li><Link to="Assignment9" >9</Link></li>
-            <li><Link to="Assignment10" >10</Link></li>
+            <li><Link to="Assignment1" >Assignment 1</Link></li>
+            <li><Link to="Assignment2" >Assignment 2</Link></li>
+            <li><Link to="Assignment3" >Assignment 3</Link></li>
+            <li><Link to="Assignment4" >Assignment 4</Link></li>
+            <li><Link to="Assignment5" >Assignment 5</Link></li>
+            <li><Link to="Assignment6" >Assignment 6</Link></li>
+            <li><Link to="Assignment7" >Assignment 7</Link></li>
+            <li><Link to="Assignment8" >Assignment 8</Link></li>
+            <li><Link to="Assignment9" >Assignment 9</Link></li>
+            <li><Link to="Assignment10" >Assignment10</Link></li>
           </ul>
         </div>
 

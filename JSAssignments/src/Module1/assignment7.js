@@ -6,7 +6,7 @@ const Assignment7 = () => {
 
 
     const handleRoll = () => {
-        let randomDices = Array.from({ length: rolls }, () => Array.from({ length: parseInt(dices) }, () => Math.floor(Math.random() * parseInt(6))))
+        let randomDices = Array.from({ length: rolls }, () => Array.from({ length: parseInt(dices) }, () => 1 + Math.floor(Math.random() * parseInt(6))))
             ;
 
         console.log(randomDices)
