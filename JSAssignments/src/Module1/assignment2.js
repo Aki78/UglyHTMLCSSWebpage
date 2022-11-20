@@ -1,15 +1,22 @@
-const Assignment1 = () => {
-    console.log("I'm printing to the console!")
+import { useEffect, useState } from "react";
+import { ReactDOM } from "react-dom/client";
+
+const Assignment2 = () => {
+    const [name, setName] = useState("")
     return (
         <>
-            <div>Assignment 1</div>
+            <div>Assignment 2</div>
+            <form>
+                <label> What's your name:
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                </label>
+            </form>
+            <div> Hello, {name}</div>
         </>
 
     )
 }
 
-
-export default Assignment1;
-
+export default Assignment2;
 
 
