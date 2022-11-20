@@ -1,31 +1,23 @@
 import { useState } from "react";
+import isLeapYear from "leap-year";
+const Assignment5 = () => {
+    const [year, setYear] = useState("");
+    console.log("is leapyear", toString(isLeapYear(2000)))
 
-const Assignment4 = () => {
-    const [studnetName, setStudentName] = useState("");
-    const [house, setHouse] = useState("");
-
-    const decideHouse = (e) => {
-        if (e.key === 'Enter') {
-            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
-            setHouse(houses[Math.floor(Math.random() * 4)]);
-        }
-    }
     return (
         <>
-            <div>Assignment 4 </div>
-            <div>Press Enter after Name input</div>
+            <div>Assignment 5 </div>
             <input type="text"
-                value={studnetName}
-                onChange={(e) => setStudentName(e.target.value)}
-                onKeyDown={(e) => decideHouse(e)}
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
             />
-             <div> {studnetName}, you are {house}</div> 
+             <div> is leap year: {isLeapYear(parseInt(year)).toString()}</div> 
             
         </>
 
     )
 }
 
-export default Assignment4;
+export default Assignment5;
 
 
