@@ -1,23 +1,31 @@
 import { useState } from "react";
 
-const N2Assignment3 = () => {
-    const [valA, setValA] = useState("")
-    const [valB, setValB] = useState("")
-    const [valC, setValC] = useState("")
+const M2Assignment3 = () => {
+    const [studnetName, setStudentName] = useState("");
+    const [house, setHouse] = useState("");
+
+    const decideHouse = (e) => {
+        if (e.key === 'Enter') {
+            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+            setHouse(houses[Math.floor(Math.random() * 4)]);
+        }
+    }
     return (
         <>
-            <div>Assignment 3</div>
-            <input type="text" value={valA} onChange={(e) => setValA(e.target.value)} />
-            <input type="text" value={valB} onChange={(e) => setValB(e.target.value)} />
-            <input type="text" value={valC} onChange={(e) => setValC(e.target.value)} />
-            <div> sum : {parseInt(valA) + parseInt(valB) + parseInt(valC)}</div>
-            <div> product: {parseInt(valA) * parseInt(valB) * parseInt(valC)}</div>
-            <div> average: {(parseInt(valA) + parseInt(valB) + parseInt(valC))/3}</div>
+            <div>Assignment 1 </div>
+            <div>Press Enter after Name input</div>
+            <input type="text"
+                value={studnetName}
+                onChange={(e) => setStudentName(e.target.value)}
+                onKeyDown={(e) => decideHouse(e)}
+            />
+             <div> {studnetName}, you are {house}</div> 
+            
         </>
 
     )
 }
 
-export default N2Assignment3;
+export default M2Assignment3;
 
 

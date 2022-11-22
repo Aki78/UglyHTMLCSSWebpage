@@ -1,22 +1,31 @@
-import { useEffect, useState } from "react";
-import isLeapYear from "leap-year";
-import isPrime from "is-prime-number";
+import { useState } from "react";
 
-const N2Assignment9 = () => {
-    const [num, setNum] = useState("0");
-    console.log(isPrime(3))
+const M2Assignment9 = () => {
+    const [studnetName, setStudentName] = useState("");
+    const [house, setHouse] = useState("");
 
+    const decideHouse = (e) => {
+        if (e.key === 'Enter') {
+            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+            setHouse(houses[Math.floor(Math.random() * 4)]);
+        }
+    }
     return (
         <>
-            <div>Assignment9 </div>
-            <input type="text" value={num} onChange={(e) => setNum(e.target.value)} />
-            <br/>
-            {isPrime(parseInt(num)).toString()}
+            <div>Assignment 1 </div>
+            <div>Press Enter after Name input</div>
+            <input type="text"
+                value={studnetName}
+                onChange={(e) => setStudentName(e.target.value)}
+                onKeyDown={(e) => decideHouse(e)}
+            />
+             <div> {studnetName}, you are {house}</div> 
+            
         </>
-    )
 
+    )
 }
 
-export default N2Assignment9;
+export default M2Assignment9;
 
 

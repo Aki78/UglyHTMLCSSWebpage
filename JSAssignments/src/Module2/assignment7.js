@@ -1,39 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const N2Assignment7 = () => {
-    const [rolls, setRolls] = useState("");
-    const [dices, setDices] = useState("");
+const M2Assignment7 = () => {
+    const [studnetName, setStudentName] = useState("");
+    const [house, setHouse] = useState("");
 
-
-    const handleRoll = () => {
-        let randomDices = Array.from({ length: rolls }, () => Array.from({ length: parseInt(dices) }, () => 1 + Math.floor(Math.random() * parseInt(6))))
-            ;
-
-        console.log(randomDices)
-
-        return (
-            randomDices.map((d) =>
-                <div>{d.reduce((p, a) => p + a, 0)}</div>
-            )
-         )
+    const decideHouse = (e) => {
+        if (e.key === 'Enter') {
+            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+            setHouse(houses[Math.floor(Math.random() * 4)]);
+        }
+    }
+    return (
+        <>
+            <div>Assignment 1 </div>
+            <div>Press Enter after Name input</div>
+            <input type="text"
+                value={studnetName}
+                onChange={(e) => setStudentName(e.target.value)}
+                onKeyDown={(e) => decideHouse(e)}
+            />
+             <div> {studnetName}, you are {house}</div> 
             
+        </>
 
+    )
 }
 
-return (
-    <>
-        <div>Assignment7 </div>
-        <input type="text" value={rolls} onChange={(e) => setRolls(e.target.value)} />
-        <input type="text" value={dices} onChange={(e) => setDices(e.target.value)} />
-        {handleRoll()}
-    </>
-)
-
-
-
-
-}
-
-export default N2Assignment7;
+export default M2Assignment7;
 
 

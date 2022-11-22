@@ -1,22 +1,31 @@
-import { useEffect, useState } from "react";
-import { ReactDOM } from "react-dom/client";
+import { useState } from "react";
 
-const N2Assignment2 = () => {
-    const [name, setName] = useState("")
+const M2Assignment2 = () => {
+    const [studnetName, setStudentName] = useState("");
+    const [house, setHouse] = useState("");
+
+    const decideHouse = (e) => {
+        if (e.key === 'Enter') {
+            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+            setHouse(houses[Math.floor(Math.random() * 4)]);
+        }
+    }
     return (
         <>
-            <div>Assignment 2</div>
-            <form>
-                <label> What's your name:
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-                </label>
-            </form>
-            <div> Hello, {name}</div>
+            <div>Assignment 1 </div>
+            <div>Press Enter after Name input</div>
+            <input type="text"
+                value={studnetName}
+                onChange={(e) => setStudentName(e.target.value)}
+                onKeyDown={(e) => decideHouse(e)}
+            />
+             <div> {studnetName}, you are {house}</div> 
+            
         </>
 
     )
 }
 
-export default N2Assignment2;
+export default M2Assignment2;
 
 

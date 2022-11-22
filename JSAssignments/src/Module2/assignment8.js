@@ -1,49 +1,31 @@
-import { useEffect, useState } from "react";
-import isLeapYear from "leap-year";
+import { useState } from "react";
 
-const N2Assignment8 = () => {
-    const [year1, setYear1] = useState("0");
-    const [year2, setYear2] = useState("1");
+const M2Assignment8 = () => {
+    const [studnetName, setStudentName] = useState("");
+    const [house, setHouse] = useState("");
 
-
-    function range(start, end) {
-        return Array(end - start + 1).fill().map((_, idx) => start + idx)
+    const decideHouse = (e) => {
+        if (e.key === 'Enter') {
+            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+            setHouse(houses[Math.floor(Math.random() * 4)]);
+        }
     }
-
-    const handleYears = () => {
-        let y1 = parseInt(year1)
-        let y2 = parseInt(year2)
-        let l = y2 - y1
-        let years = [0, 1]
-        if (y2 > y1) years = range(y1, y2)
-        let leapYears = years.filter((v) => isLeapYear(v))
-        console.log(leapYears)
-
-        return (
-            leapYears.map((d) =>
-                <li>{d}</li>
-            )
-        )
-
-
-    }
-
     return (
         <>
-            <div>Assignment8 </div>
-            <input type="text" value={year1} onChange={(e) => setYear1(e.target.value)} />
-            <input type="text" value={year2} onChange={(e) => setYear2(e.target.value)} />
-            <ul>
-                {handleYears()}
-            </ul>
+            <div>Assignment 1 </div>
+            <div>Press Enter after Name input</div>
+            <input type="text"
+                value={studnetName}
+                onChange={(e) => setStudentName(e.target.value)}
+                onKeyDown={(e) => decideHouse(e)}
+            />
+             <div> {studnetName}, you are {house}</div> 
+            
         </>
+
     )
-
-
-
-
 }
 
-export default N2Assignment8;
+export default M2Assignment8;
 
 

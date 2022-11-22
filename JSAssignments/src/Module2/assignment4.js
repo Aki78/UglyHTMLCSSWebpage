@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const N2Assignment4 = () => {
+const M2Assignment4 = () => {
     const [studnetName, setStudentName] = useState("");
     const [house, setHouse] = useState("");
 
@@ -12,7 +12,7 @@ const N2Assignment4 = () => {
     }
     return (
         <>
-            <div>Assignment 4 </div>
+            <div>Assignment 1 </div>
             <div>Press Enter after Name input</div>
             <input type="text"
                 value={studnetName}
@@ -26,6 +26,6 @@ const N2Assignment4 = () => {
     )
 }
 
-export default N2Assignment4;
+export default M2Assignment4;
 
 

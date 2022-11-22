@@ -1,49 +1,31 @@
 import { useState } from "react";
 
-const N2Assignment10 = () => {
-    //    const [rolls, setRolls] = useState("");
-    const [dices, setDices] = useState("2");
-    const [targetSum, setTargetSum] = useState("7");
+const M2Assignment10 = () => {
+    const [studnetName, setStudentName] = useState("");
+    const [house, setHouse] = useState("");
 
-
-    const handleRoll = () => {
-        let totalNum = 100000
-
-        if (parseInt(dices) > targetSum) return <div>The percentage is 0%</div>
-
-        if (parseInt(dices)*6 < targetSum) return <div>The percentage is 0%</div>
-
-        let randomDices = Array.from({ length: totalNum }, () => Array.from({ length: parseInt(dices) }, () => 1 + Math.floor(Math.random() * parseInt(6))))
-            ;
-        let hits = randomDices.map(r => r.reduce((p, a) => p + a, 0)).filter(d => d == parseInt(targetSum))
-        console.log(hits.length)
-        let hitSize = hits.length
-
-
-        return (
-            <div>The percentage is {(hitSize / totalNum * 100).toFixed(2)}%</div>
-        )
-
-
+    const decideHouse = (e) => {
+        if (e.key === 'Enter') {
+            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+            setHouse(houses[Math.floor(Math.random() * 4)]);
+        }
     }
-
     return (
         <>
-            <div>Assignment10 </div>
-            <div>Target Sum</div>
-            <input type="text" value={targetSum} onChange={(e) => setTargetSum(e.target.value)} />
-
-            <div>Number of Dices</div>
-            <input type="text" value={dices} onChange={(e) => setDices(e.target.value)} />
-            {handleRoll()}
+            <div>Assignment 1 </div>
+            <div>Press Enter after Name input</div>
+            <input type="text"
+                value={studnetName}
+                onChange={(e) => setStudentName(e.target.value)}
+                onKeyDown={(e) => decideHouse(e)}
+            />
+             <div> {studnetName}, you are {house}</div> 
+            
         </>
+
     )
-
-
-
-
 }
 
-export default N2Assignment10;
+export default M2Assignment10;
 
 
