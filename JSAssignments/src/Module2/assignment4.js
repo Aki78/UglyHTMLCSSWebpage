@@ -1,31 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const M2Assignment4 = () => {
-    const [studnetName, setStudentName] = useState("");
-    const [house, setHouse] = useState("");
+    const [numbers, setNumbers] = useState([""])
+    const [num, setNum] = useState("");
 
-    const decideHouse = (e) => {
-        if (e.key === 'Enter') {
-            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
-            setHouse(houses[Math.floor(Math.random() * 4)]);
-        }
+
+    const showList = () => {
+        if (numbers.indexOf("0") !== -1)
+            return numbers.map((e) => <div>{e}</div>)
     }
+
+    const updateInputs = (e, i) => {
+        console.log(e)
+        if (e.key === 'Enter' && e.target.value != "" && i == numbers.length - 1 && numbers.indexOf("0") == -1) {
+            const newInputs = [...numbers, ""]
+            setNumbers(newInputs)
+        }
+
+    }
+
+    const showNumber = (e, i) => {
+        if (i == numbers.length - 1 && !isNaN(+e)) {
+            const updatedNumbers = [...numbers]
+            updatedNumbers[i] = e
+            setNumbers(updatedNumbers)
+
+        }
+
+    }
+
+    const getNumbers = () => {
+        return numbers.map((n, i) =>
+            <input type="text"
+                value={numbers[i]}
+                onChange={(e) => showNumber(e.target.value, i)}
+                onKeyDown={(e) => updateInputs(e, i)}
+autoFocus
+            />
+
+
+        )
+    }
+
     return (
         <>
-            <div>Assignment 1 </div>
-            <div>Press Enter after Name input</div>
-            <input type="text"
-                value={studnetName}
-                onChange={(e) => setStudentName(e.target.value)}
-                onKeyDown={(e) => decideHouse(e)}
-            />
-             <div> {studnetName}, you are {house}</div> 
-            
+            <div>Module 2 Assignment 4 </div>
+            {getNumbers()}
+            <ol > {showList()}</ol>
+
         </>
 
     )
 }
 
 export default M2Assignment4;
-
 
