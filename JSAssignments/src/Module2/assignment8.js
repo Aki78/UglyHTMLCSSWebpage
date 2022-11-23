@@ -5,6 +5,7 @@ const M2Assignment8 = () => {
     const myConcat = (stem,e) => {
         return stem + e
     }
+console.log(houses.reduce(myConcat))
     return (
         <>
             <div>Assignment 1 </div>

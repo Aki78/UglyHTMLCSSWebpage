@@ -1,25 +1,14 @@
 import { useState } from "react";
 
 const M2Assignment9 = () => {
-    const [studnetName, setStudentName] = useState("");
-    const [house, setHouse] = useState("");
+    const numbers = [1,2,3,4,5,6,7,8,9];
+    const evenNumbers = numbers.filter(e => e % 2 == 0)
 
-    const decideHouse = (e) => {
-        if (e.key === 'Enter') {
-            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
-            setHouse(houses[Math.floor(Math.random() * 4)]);
-        }
-    }
     return (
         <>
-            <div>Assignment 1 </div>
-            <div>Press Enter after Name input</div>
-            <input type="text"
-                value={studnetName}
-                onChange={(e) => setStudentName(e.target.value)}
-                onKeyDown={(e) => decideHouse(e)}
-            />
-             <div> {studnetName}, you are {house}</div> 
+            <div>Assignment 9 </div>
+            <div>{numbers}</div>
+            <div>{evenNumbers}</div>
             
         </>
 
