@@ -1,31 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const M2Assignment7 = () => {
-    const [studnetName, setStudentName] = useState("");
-    const [house, setHouse] = useState("");
+    const [dices, setDices] = useState([]);
+    const [num, setNum] = useState(5);
 
-    const decideHouse = (e) => {
-        if (e.key === 'Enter') {
-            const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
-            setHouse(houses[Math.floor(Math.random() * 4)]);
+    const rollDice = () => Math.floor(Math.random() * 21 + 1);
+
+    let some_list = []
+
+    useEffect(() => {
+        let plays = 0
+        let rolls = (list, num_plays) => {
+            console.log("123", num_plays)
+            const dice = rollDice()
+            console.log("123", num_plays)
+            if (isNaN(num_plays) || num > 1000) return []
+
+            if (num_plays != num) {
+                num_plays += 1
+                return rolls([...list, dice], num_plays);
+            }
+            else {
+                console.log("HIT")
+                return ([...list, dice])
+            }
         }
-    }
+
+        setDices(rolls(some_list, plays))
+        console.log("Final", dices)
+        plays = 0
+
+    }, [num])
+
+
     return (
         <>
-            <div>Assignment 1 </div>
-            <div>Press Enter after Name input</div>
+            <div>Module 2 Assignment 7 </div>
             <input type="text"
-                value={studnetName}
-                onChange={(e) => setStudentName(e.target.value)}
-                onKeyDown={(e) => decideHouse(e)}
+                value={num}
+                onChange={(e) => setNum(e.target.value)}
+                autoFocus
             />
-             <div> {studnetName}, you are {house}</div> 
-            
+            <ol> {dices.map((n) => <li>{n}</li>)} </ol>
+
         </>
 
     )
 }
 
 export default M2Assignment7;
-
 

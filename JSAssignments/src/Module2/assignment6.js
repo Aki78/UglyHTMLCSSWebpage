@@ -20,7 +20,6 @@ useEffect (() => {
         }
     }
 
-
     setDices(rolls(some_list))
     console.log("Final",dices)
 
