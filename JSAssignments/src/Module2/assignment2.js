@@ -1,54 +1,60 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const M2Assignment1 = () => {
-    const [dog0, setDog0] = useState("Bull");
-    const [dog1, setDog1] = useState("Golden");
-    const [dog2, setDog2] = useState("Black");
-    const [dog3, setDog3] = useState("Brown");
-    const [dog4, setDog4] = useState("Pink");
-    const [dog5, setDog5] = useState("Yellow");
+const M2Assignment2 = () => {
+    const [num, setNum] = useState(5);
+    const [names, setNames] = useState(Array(parseInt(num)).fill(""));
+
+    const changeArraySize = (e) => {
+        if (e != 0) {
+            setNum(e);
+            console.log("SETTING")
+        } else {setNum(0)}
+        setNames(Array(parseInt(e)).fill(""))
+        console.log(names)
+    }
+    const getNames = () => {
+        return names.map((n, i) =>
+            <input type="text"
+                value={names[i]}
+                onChange={(e) => handleElement(e.target.value, i)}
+            />
+
+
+        )
+    }
 
     const reverseList = () => {
-        let some_list = [dog0, dog1, dog2, dog3, dog4, dog5];
-        some_list.sort()
-        return some_list.map((e) => <div>{e}</div>
-        )
+        let cnames = [...names].sort()
+        return cnames.map((e) => <div>{e}</div>)
+    }
+    const handleElement = (e, i) => {
+        const updatedNames = [...names]
+        console.log("updated", updatedNames, i)
+        updatedNames[i] = e
+        setNames(updatedNames)
+
+    }
+    const printNum = () => {
+        if (parseInt(num) == 0) {
+            return ""
+        }
+        else return num
     }
     return (
         <>
-            <div>Module 2 Assignment 1 </div>
-            <input type="text"
-                value={dog0}
-                onChange={(e) => setDog0(e.target.value)}
+            <div>Module 2 Assignment 2 </div>
+            <input type="number"
+                value={printNum()}
+                onChange={(e) => changeArraySize(e.target.value)}
             />
-            <input type="text"
-                value={dog1}
-                onChange={(e) => setDog1(e.target.value)}
-            />
-            <input type="text"
-                value={dog2}
-                onChange={(e) => setDog2(e.target.value)}
-            />
-            <input type="text"
-                value={dog3}
-                onChange={(e) => setDog3(e.target.value)}
-            />
-            <input type="text"
-                value={dog4}
-                onChange={(e) => setDog4(e.target.value)}
-            />
-            <input type="text"
-                value={dog5}
-                onChange={(e) => setDog5(e.target.value)}
-            />
-
-            <ol style={{display: "flex", flexDirection: "column-reverse"}}> {reverseList()}</ol>
+            {getNames()}
+            <ol style={{ display: "flex", flexDirection: "column-reverse" }}> {reverseList()}</ol>
 
         </>
 
     )
 }
 
-export default M2Assignment1;
+export default M2Assignment2;
 
 
