@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const M2Assignment3 = () => {
+const M3Assignment3 = () => {
     const [dog0, setDog0] = useState("Bull");
     const [dog1, setDog1] = useState("Golden");
     const [dog2, setDog2] = useState("Black");
@@ -16,7 +16,7 @@ const M2Assignment3 = () => {
     }
     return (
         <>
-            <div>Module 2 Assignment 3 </div>
+            <div>Module 3 Assignment 3 </div>
             <input type="text"
                 value={dog0}
                 onChange={(e) => setDog0(e.target.value)}
@@ -49,6 +49,6 @@ const M2Assignment3 = () => {
     )
 }
 
-export default M2Assignment3;
+export default M3Assignment3;
 
 

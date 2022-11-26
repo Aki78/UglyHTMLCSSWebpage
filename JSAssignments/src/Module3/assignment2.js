@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const M2Assignment2 = () => {
+const M3Assignment2 = () => {
     const [num, setNum] = useState(5);
     const [names, setNames] = useState(Array(parseInt(num)).fill(""));
 
@@ -42,7 +42,7 @@ const M2Assignment2 = () => {
     }
     return (
         <>
-            <div>Module 2 Assignment 2 </div>
+            <div>Module 3 Assignment 2 </div>
             <input type="number"
                 value={printNum()}
                 onChange={(e) => changeArraySize(e.target.value)}
@@ -55,6 +55,6 @@ const M2Assignment2 = () => {
     )
 }
 
-export default M2Assignment2;
+export default M3Assignment2;
 
 

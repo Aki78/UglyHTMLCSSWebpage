@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const M2Assignment7 = () => {
+const M3Assignment7 = () => {
     const [dices, setDices] = useState([]);
     const [num, setNum] = useState(5);
 
@@ -35,7 +35,7 @@ const M2Assignment7 = () => {
 
     return (
         <>
-            <div>Module 2 Assignment 7 </div>
+            <div>Module 3 Assignment 7 </div>
             <input type="text"
                 value={num}
                 onChange={(e) => setNum(e.target.value)}
@@ -48,5 +48,5 @@ const M2Assignment7 = () => {
     )
 }
 
-export default M2Assignment7;
+export default M3Assignment7;
 

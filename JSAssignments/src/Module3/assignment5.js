@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const M2Assignment5 = () => {
+const M3Assignment5 = () => {
     const [numbers, setNumbers] = useState([""])
     const [num, setNum] = useState("");
 
@@ -46,7 +46,7 @@ autoFocus
 
     return (
         <>
-            <div>Module 2 Assignment 5 </div>
+            <div>Module 3 Assignment 5 </div>
             {getNumbers()}
             <ol > {showList()}</ol>
 
@@ -55,5 +55,5 @@ autoFocus
     )
 }
 
-export default M2Assignment5;
+export default M3Assignment5;
 

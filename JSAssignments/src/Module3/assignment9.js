@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const M2Assignment9 = () => {
+const M3Assignment9 = () => {
     const numbers = [1,2,3,4,5,6,7,8,9];
     const evenNumbers = numbers.filter(e => e % 2 == 0)
 
@@ -15,6 +15,6 @@ const M2Assignment9 = () => {
     )
 }
 
-export default M2Assignment9;
+export default M3Assignment9;
 
 

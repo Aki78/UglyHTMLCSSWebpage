@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const M2Assignment6 = () => {
+const M3Assignment6 = () => {
     const [dices, setDices] = useState([]);
 
     const rollDice = () => Math.floor(Math.random() * 6 + 1);
@@ -30,7 +30,7 @@ useEffect (() => {
 
     return (
         <>
-            <div>Module 2 Assignment 6 </div>
+            <div>Module 3 Assignment 6 </div>
             <ol> {dices.map((n, i) => <li>{n}</li>)} </ol>
 
         </>
@@ -38,5 +38,5 @@ useEffect (() => {
     )
 }
 
-export default M2Assignment6;
+export default M3Assignment6;
 

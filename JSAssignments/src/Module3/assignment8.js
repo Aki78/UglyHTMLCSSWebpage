@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const M2Assignment8 = () => {
+const M3Assignment8 = () => {
     const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
     const myConcat = (stem,e) => {
         return stem + e
@@ -16,6 +16,6 @@ console.log(houses.reduce(myConcat))
     )
 }
 
-export default M2Assignment8;
+export default M3Assignment8;
 
 
