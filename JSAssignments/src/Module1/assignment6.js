@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const M1Assignment6 = () => {
-    const [number, setNumber] = useState("");
+    const [number, setNumber] = useState("5");
     const [c, setC] = useState("");
 
 
@@ -19,7 +19,7 @@ const M1Assignment6 = () => {
         if (c) {
             return (
                 <div>
-                    <input type="text"
+                    <input type="number"
                         value={number}
                         onChange={(e) => setNumber(e.target.value)}
                     />

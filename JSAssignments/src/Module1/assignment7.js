@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 const M1Assignment7 = () => {
-    const [rolls, setRolls] = useState("");
-    const [dices, setDices] = useState("");
+    const [rolls, setRolls] = useState("3");
+    const [dices, setDices] = useState("4");
 
 
     const handleRoll = () => {
@@ -23,8 +23,8 @@ const M1Assignment7 = () => {
 return (
     <>
         <div>Assignment7 </div>
-        <input type="text" value={rolls} onChange={(e) => setRolls(e.target.value)} />
-        <input type="text" value={dices} onChange={(e) => setDices(e.target.value)} />
+        <input type="number" value={rolls} onChange={(e) => setRolls(e.target.value)} />
+        <input type="number" value={dices} onChange={(e) => setDices(e.target.value)} />
         {handleRoll()}
     </>
 )

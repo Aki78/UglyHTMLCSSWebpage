@@ -1,13 +1,13 @@
 import { useState } from "react";
 import isLeapYear from "leap-year";
 const M1Assignment5 = () => {
-    const [year, setYear] = useState("");
+    const [year, setYear] = useState("2004");
     console.log("is leapyear", toString(isLeapYear(2000)))
 
     return (
         <>
             <div>Assignment 5 </div>
-            <input type="text"
+            <input type="number"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
             />

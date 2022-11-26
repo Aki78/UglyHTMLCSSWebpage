@@ -3,15 +3,15 @@ import isLeapYear from "leap-year";
 import isPrime from "is-prime-number";
 
 const M1Assignment9 = () => {
-    const [num, setNum] = useState("0");
+    const [num, setNum] = useState("5");
     console.log(isPrime(3))
 
     return (
         <>
             <div>Assignment9 </div>
-            <input type="text" value={num} onChange={(e) => setNum(e.target.value)} />
+            <input type="number" value={num} onChange={(e) => setNum(e.target.value)} />
             <br/>
-            {isPrime(parseInt(num)).toString()}
+            is prime: {isPrime(parseInt(num)).toString()}
         </>
     )
 
