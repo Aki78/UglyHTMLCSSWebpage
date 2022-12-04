@@ -1,9 +1,12 @@
-import { useEffect } from "react"
+import {useEffect} from "react"
 import {Helmet} from "react-helmet"
 const M3Assignment7 = () => {
     useEffect ( () => {
-        const elem = document.querySelector("button")
-        elem.addEventListener('click', () => alert('Button clicked'));
+        const myImg = document.getElementById("target");
+        const hover = document.getElementById("trigger");
+
+        hover.addEventListener('mouseenter', () => myImg.src = process.env.PUBLIC_URL +  '/img/picB.jpg');
+        hover.addEventListener('mouseleave', () => {myImg.src = process.env.PUBLIC_URL +  '/img/picA.jpg'});
      }, [])
 
     return (
@@ -17,7 +20,8 @@ const M3Assignment7 = () => {
 
             <div>Module 3 Assignment 7 </div>
     <h1>Task 7</h1>
-    <button>Click me!</button>
+    <img id="target" src= { process.env.PUBLIC_URL + "/img/picA.jpg"} alt="example"/>
+    <p id="trigger">Hover over me</p>
 
         </>
 
