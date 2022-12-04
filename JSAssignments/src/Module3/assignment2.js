@@ -1,60 +1,40 @@
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react"
+import './t2/2.css'
+import {Helmet} from "react-helmet"
 const M3Assignment2 = () => {
-    const [num, setNum] = useState(5);
-    const [names, setNames] = useState(Array(parseInt(num)).fill(""));
 
-    const changeArraySize = (e) => {
-        if (e != 0) {
-            setNum(e);
-            console.log("SETTING")
-        } else {setNum(0)}
-        setNames(Array(parseInt(e)).fill(""))
-        console.log(names)
-    }
-    const getNames = () => {
-        return names.map((n, i) =>
-            <input type="text"
-                value={names[i]}
-                onChange={(e) => handleElement(e.target.value, i)}
-            />
+    useEffect ( () => {
+        const ul = document.querySelector("#target")
 
+        const list1 = document.createElement("li")
+        const list2 = document.createElement("li");
+        const list3 = document.createElement("li");
+        list1.innerText = "First item";
+        list2.innerText = "Second item";
+        list3.innerText = "Third item";
+        ul.appendChild(list1);
+        ul.appendChild(list2);
+        ul.appendChild(list3);
 
-        )
-    }
+        ul.classList.add("my-item");
+     }, [])
 
-    const reverseList = () => {
-        let cnames = [...names].sort()
-        return cnames.map((e) => <div>{e}</div>)
-    }
-    const handleElement = (e, i) => {
-        const updatedNames = [...names]
-        console.log("updated", updatedNames, i)
-        updatedNames[i] = e
-        setNames(updatedNames)
-
-    }
-    const printNum = () => {
-        if (parseInt(num) == 0) {
-            return ""
-        }
-        else return num
-    }
     return (
         <>
+            <Helmet>
+                <meta charset="UTF-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Task 2</title>
+            </Helmet>
             <div>Module 3 Assignment 2 </div>
-            <input type="number"
-                value={printNum()}
-                onChange={(e) => changeArraySize(e.target.value)}
-            />
-            {getNames()}
-            <ol style={{ display: "flex", flexDirection: "column-reverse" }}> {reverseList()}</ol>
 
+            <h1>Task 2</h1>
+            <ul id="target"></ul>
         </>
 
     )
 }
 
 export default M3Assignment2;
-
 

@@ -118,16 +118,16 @@ const App = () => {
             <Route path="M2Assignment10" element={<M2Assignment10 />} />
           </Routes>
           <Routes>
-            <Route path="M3Assignment1" element={<M2Assignment1 />} />
-            <Route path="M3Assignment2" element={<M2Assignment2 />} />
-            <Route path="M3Assignment3" element={<M2Assignment3 />} />
-            <Route path="M3Assignment4" element={<M2Assignment4 />} />
-            <Route path="M3Assignment5" element={<M2Assignment5 />} />
-            <Route path="M3Assignment6" element={<M2Assignment6 />} />
-            <Route path="M3Assignment7" element={<M2Assignment7 />} />
-            <Route path="M3Assignment8" element={<M2Assignment8 />} />
-            <Route path="M3Assignment9" element={<M2Assignment9 />} />
-            <Route path="M3Assignment10" element={<M2Assignment10 />} />
+            <Route path="M3Assignment1" element={<M3Assignment1 />} />
+            <Route path="M3Assignment2" element={<M3Assignment2 />} />
+            <Route path="M3Assignment3" element={<M3Assignment3 />} />
+            <Route path="M3Assignment4" element={<M3Assignment4 />} />
+            <Route path="M3Assignment5" element={<M3Assignment5 />} />
+            <Route path="M3Assignment6" element={<M3Assignment6 />} />
+            <Route path="M3Assignment7" element={<M3Assignment7 />} />
+            <Route path="M3Assignment8" element={<M3Assignment8 />} />
+            <Route path="M3Assignment9" element={<M3Assignment9 />} />
+            <Route path="M3Assignment10" element={<M3Assignment10 />} />
           </Routes>
         </div>
       </Router>

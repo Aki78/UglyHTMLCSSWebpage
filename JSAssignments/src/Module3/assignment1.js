@@ -1,55 +1,30 @@
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react"
+import './t1/1.css'
+import {Helmet} from "react-helmet"
 const M3Assignment1 = () => {
-    const [num, setNum] = useState(5);
-    const [names, setNames] = useState(Array(parseInt(num)).fill(""));
+    // var jsContent = require('./t1/1.js')
 
-    const changeArraySize = (e) => {
-        if (e != 0) {
-            setNum(e);
-            console.log("SETTING")
-        } else {setNum(0)}
-        setNames(Array(parseInt(e)).fill(""))
-        console.log(names)
-    }
-    const getNames = () => {
-        return names.map((n, i) =>
-            <input type="text"
-                value={names[i]}
-                onChange={(e) => handleElement(e.target.value, i)}
-            />
+    useEffect ( () => {
+        const ul = document.querySelector('#target')
 
+        let lists =  "<li> First Item </li>\n<li> Second Item </li>\n<li> Third Item </li>"
 
-        )
-    }
+        ul.innerHTML = lists;
+        ul.classList.add("my-list")
+     }, [])
 
-    const reverseList = () => {
-        let cnames = [...names].sort()
-        return cnames.map((e) => <div>{e}</div>)
-    }
-    const handleElement = (e, i) => {
-        const updatedNames = [...names]
-        console.log("updated", updatedNames, i)
-        updatedNames[i] = e
-        setNames(updatedNames)
-
-    }
-    const printNum = () => {
-        if (parseInt(num) == 0) {
-            return ""
-        }
-        else return num
-    }
     return (
         <>
+            <Helmet>
+                <meta charset="UTF-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Task 1</title>
+            </Helmet>
             <div>Module 3 Assignment 1 </div>
-            <input type="number"
-                value={printNum()}
-                onChange={(e) => changeArraySize(e.target.value)}
-            />
-            {getNames()}
-            <ol style={{ display: "flex", flexDirection: "column-reverse" }}> {reverseList()}</ol>
 
+            <h1>Task 1</h1>
+            <ul id="target"></ul>
         </>
 
     )
