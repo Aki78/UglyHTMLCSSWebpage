@@ -1,57 +1,55 @@
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react"
+import './t2/2.css'
+import {Helmet} from "react-helmet"
 const M3Assignment4 = () => {
-    const [numbers, setNumbers] = useState([""])
-    const [num, setNum] = useState("");
+    const names = [
+        {name:'John',
+         value:'2345768'},
+        {name:'Paul',
+         value:'2134657'},
+        {name:'Jones',
+         value:'5423679'},
+    ];
 
-
-    const showList = () => {
-        if (numbers.indexOf("0") !== -1)
-            return numbers.map((e) => <div>{e}</div>)
-    }
-
-    const updateInputs = (e, i) => {
-        console.log(e)
-        if (e.key === 'Enter' && e.target.value != "" && i == numbers.length - 1 && numbers.indexOf("0") == -1) {
-            const newInputs = [...numbers, ""]
-            setNumbers(newInputs)
-        }
-
-    }
-
-    const showNumber = (e, i) => {
-        if (i == numbers.length - 1 && !isNaN(+e)) {
-            const updatedNumbers = [...numbers]
-            updatedNumbers[i] = e
-            setNumbers(updatedNumbers)
-
-        }
-
-    }
-
-    const getNumbers = () => {
-        return numbers.map((n, i) =>
-            <input type="text"
-                value={numbers[i]}
-                onChange={(e) => showNumber(e.target.value, i)}
-                onKeyDown={(e) => updateInputs(e, i)}
-autoFocus
-            />
-
-
-        )
-    }
+    useEffect ( () => {
+        const elem = document.querySelector("#target");
+        names.map(e => {
+                let innerElem = document.createElement("option")
+                innerElem.value = e.value
+                innerElem.innerText = e.name
+                elem.appendChild(innerElem)
+            })
+        
+     }, [])
 
     return (
         <>
+            <Helmet>
+                <meta charset="UTF-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Task 4</title>
+            </Helmet>
             <div>Module 3 Assignment 4 </div>
-            {getNumbers()}
-            <ol > {showList()}</ol>
 
+            <h1>Task 4</h1>
+            <select id="target"></select>
         </>
 
     )
 }
 
 export default M3Assignment4;
+
+
+// const slt = document.getElementById("target");
+
+// for (let i = 0; i < students.length; i++) {
+//     const opt = document.createElement("option");
+
+//     opt.value = students[i].id;
+//     opt.innerText = students[i].name;
+//     slt.appendChild(opt);
+// }
+
 
