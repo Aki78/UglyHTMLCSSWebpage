@@ -93,8 +93,8 @@ const App = () => {
 
         <div class="right">
 
-          <Routes>
-            <Route path="M1Assignment1" element={<M1Assignment1 />} />
+          <Routes exact path="/App">
+            <Route exact path="M1Assignment1" element={<M1Assignment1 />} />
             <Route path="M1Assignment2" element={<M1Assignment2 />} />
             <Route path="M1Assignment3" element={<M1Assignment3 />} />
             <Route path="M1Assignment4" element={<M1Assignment4 />} />
@@ -128,6 +128,7 @@ const App = () => {
             <Route path="M3Assignment8" element={<M3Assignment8 />} />
             <Route path="M3Assignment9" element={<M3Assignment9 />} />
             <Route path="M3Assignment10" element={<M3Assignment10 />} />
+            {/* <Route path="img/pic1.jpg" element={<img src={require("./Module3/t5/img/pic1.jpg")} />} /> */}
           </Routes>
         </div>
       </Router>

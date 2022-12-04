@@ -1,55 +1,159 @@
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react"
+import './t5/5.css'
+import {Helmet} from "react-helmet"
 const M3Assignment5 = () => {
-    const [numbers, setNumbers] = useState([""])
-    const [num, setNum] = useState("");
+const picArray = [
+  {
+    title: 'Title 1',
+    caption: 'Caption 1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales enim eget leo condimentum vulputate. Sed lacinia consectetur fermentum. Vestibulum lobortis purus id nisi mattis posuere. Praesent sagittis justo quis nibh ullamcorper, eget elementum lorem consectetur. Pellentesque eu consequat justo, eu sodales eros.',
+    image: {
+      large: '/img/pic1.jpg',
+      medium: '/thumbnails/pic1.jpg',
+    },
+  },
+  {
+    title: 'Title 2',
+    caption: 'Caption 2',
+    description:
+      'Donec dignissim tincidunt nisl, non scelerisque massa pharetra ut. Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Vestibulum tincidunt sapien eu ipsum tincidunt pulvinar. ',
+    image: {
+      large: 'img/pic2.jpg',
+      medium: 'thumbnails/pic2.jpg',
+    },
+  },
+  {
+    title: 'Title 3',
+    caption: 'Caption 3',
+    description:
+      'Phasellus imperdiet nunc tincidunt molestie vestibulum. Donec dictum suscipit nibh. Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. ',
+    image: {
+      large: 'img/pic3.jpg',
+      medium: 'thumbnails/pic3.jpg',
+    },
+  },
+  {
+    title: 'Title 4',
+    caption: 'Caption 4',
+    description:
+      'Duis sodales enim eget leo condimentum vulputate. Sed lacinia consectetur fermentum. Vestibulum lobortis purus id nisi mattis posuere. Praesent sagittis justo quis nibh ullamcorper, eget elementum lorem consectetur. Pellentesque eu consequat justo, eu sodales eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    image: {
+      large: 'img/pic4.jpg',
+      medium: 'thumbnails/pic4.jpg',
+    },
+  },
+  {
+    title: 'Title 5',
+    caption: 'Caption 5',
+    description:
+      'Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Vestibulum tincidunt sapien eu ipsum tincidunt pulvinar. Donec dignissim tincidunt nisl, non scelerisque massa pharetra ut. ',
+    image: {
+      large: 'img/pic5.jpg',
+      medium: 'thumbnails/pic5.jpg',
+    },
+  },
+  {
+    title: 'Title 6',
+    caption: 'Caption 6',
+    description:
+      'Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Phasellus imperdiet nunc tincidunt molestie vestibulum. Donec dictum suscipit nibh.',
+    image: {
+      large: 'img/pic6.jpg',
+      medium: 'thumbnails/pic6.jpg',
+    },
+  },
+  {
+    title: 'Title 7',
+    caption: 'Caption 7',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales enim eget leo condimentum vulputate. Sed lacinia consectetur fermentum. Vestibulum lobortis purus id nisi mattis posuere. Praesent sagittis justo quis nibh ullamcorper, eget elementum lorem consectetur. Pellentesque eu consequat justo, eu sodales eros.',
+    image: {
+      large: 'img/pic7.jpg',
+      medium: 'thumbnails/pic7.jpg',
+    },
+  },
+  {
+    title: 'Title 8',
+    caption: 'Caption 8',
+    description:
+      'Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Vestibulum tincidunt sapien eu ipsum tincidunt pulvinar. Donec dignissim tincidunt nisl, non scelerisque massa pharetra ut. Sed vel velit ante. Aenean quis viverra magna. ',
+    image: {
+      large: 'img/pic8.jpg',
+      medium: 'thumbnails/pic8.jpg',
+    },
+  },
+  {
+    title: 'Title 9',
+    caption: 'Caption 9',
+    description:
+      'Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Phasellus imperdiet nunc tincidunt molestie vestibulum. Donec dictum suscipit nibh. Sed vel velit ante. Aenean quis viverra magna. ',
+    image: {
+      large: 'img/pic9.jpg',
+      medium: 'thumbnails/pic9.jpg',
+    },
+  },
+];
 
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
 
-    const showList = () => {
-        if (numbers.indexOf("0") !== -1 || new Set(numbers).size !== numbers.length)
-            return numbers.map((e) => <div>{e}</div>)
-    }
+    useEffect ( () => {
+      const pictures = document.getElementById("pictures");
+      const images = importAll(require.context('./t5/img', false, /\.(png|jpe?g|svg)$/));
+        picArray.map(e => {
+          let articleElem = document.createElement("article");
+          let h2Elem  = document.createElement("h2");
+          let pElem = document.createElement("p");
 
-    const updateInputs = (e, i) => {
-        console.log(numbers,e.target.value)
-        console.log(numbers.indexOf(e.target.value))
-        if (e.key === 'Enter' && e.target.value != "" && i == numbers.length - 1 && numbers.slice(0,-1).indexOf(e.target.value) == -1) {
-            console.log("Adding")
-            const newInputs = [...numbers, ""]
-            setNumbers(newInputs)
-        }
+          articleElem.classList.add("card");
+          h2Elem.innerText = e.title;
+          pElem.innerHTML = e.description;
+        
+          let figureElem = document.createElement("figure");
+          let imgElem = document.createElement("img");
+          let figcaptionElem = document.createElement("figcaption");
+          
+          imgElem.src = e.image.medium;
+          console.log(imgElem.src)
+          imgElem.alt = e.title;
+          figcaptionElem.innerText  = e.caption;
 
-    }
+          figureElem.appendChild(imgElem);
+          figureElem.appendChild(figcaptionElem);
+          
+          articleElem.appendChild(h2Elem);
+          articleElem.appendChild(figureElem);
+          articleElem.appendChild(pElem);
 
-    const showNumber = (e, i) => {
-        if (i == numbers.length - 1 && !isNaN(+e) ) {
-            const updatedNumbers = [...numbers]
-            updatedNumbers[i] = e
-            setNumbers(updatedNumbers)
-
-        }
-
-    }
-
-    const getNumbers = () => {
-        return numbers.map((n, i) =>
-            <input type="text"
-                value={numbers[i]}
-                onChange={(e) => showNumber(e.target.value, i)}
-                onKeyDown={(e) => updateInputs(e, i)}
-autoFocus
-            />
-
-
-        )
-    }
+          pictures.appendChild(articleElem);
+            })
+        
+     }, [])
 
     return (
         <>
+            <Helmet>
+                <title>Task 5</title>
+                <meta charset="UTF-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            </Helmet>
             <div>Module 3 Assignment 5 </div>
-            {getNumbers()}
-            <ol > {showList()}</ol>
 
+            <h1>Task 5</h1>
+              <div class="container">
+                <main>
+                    <section id="pictures">
+                    </section>
+                </main>
+                <footer>
+                    <p>This is a footer</p>
+                </footer>
+            </div>
         </>
 
     )

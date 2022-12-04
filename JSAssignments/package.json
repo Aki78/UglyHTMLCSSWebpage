@@ -7,14 +7,20 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dangerously-set-html-content": "^1.0.12",
     "gh-pages": "^4.0.0",
+    "html-loader": "^4.2.0",
     "is-prime-number": "^2.1.0",
     "leap-year": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-iframe": "^1.8.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "usehooks-ts": "^2.9.1",
+    "web-vitals": "^2.1.4",
+    "webpack-cli": "^5.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -41,5 +47,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "webpack": "^5.75.0"
   }
 }

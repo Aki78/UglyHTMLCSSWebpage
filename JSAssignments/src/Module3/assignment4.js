@@ -40,16 +40,3 @@ const M3Assignment4 = () => {
 }
 
 export default M3Assignment4;
-
-
-// const slt = document.getElementById("target");
-
-// for (let i = 0; i < students.length; i++) {
-//     const opt = document.createElement("option");
-
-//     opt.value = students[i].id;
-//     opt.innerText = students[i].name;
-//     slt.appendChild(opt);
-// }
-
-
