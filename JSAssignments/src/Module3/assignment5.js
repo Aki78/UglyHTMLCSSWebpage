@@ -136,8 +136,8 @@ const picArray = [
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Helmet>
             <div>Module 3 Assignment 5 </div>
-
-            <h1>Task 5</h1>
+<header>
+            <h1>Task 5</h1></header>
               <div class="container">
                 <main>
                     <section id="pictures">
