@@ -20,7 +20,7 @@ const picArray = [
       'Donec dignissim tincidunt nisl, non scelerisque massa pharetra ut. Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Vestibulum tincidunt sapien eu ipsum tincidunt pulvinar. ',
     image: {
       large: 'img/pic2.jpg',
-      medium: 'thumbnails/pic2.jpg',
+      medium: '/thumbnails/pic2.jpg',
     },
   },
   {
@@ -30,7 +30,7 @@ const picArray = [
       'Phasellus imperdiet nunc tincidunt molestie vestibulum. Donec dictum suscipit nibh. Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. ',
     image: {
       large: 'img/pic3.jpg',
-      medium: 'thumbnails/pic3.jpg',
+      medium: '/thumbnails/pic3.jpg',
     },
   },
   {
@@ -40,7 +40,7 @@ const picArray = [
       'Duis sodales enim eget leo condimentum vulputate. Sed lacinia consectetur fermentum. Vestibulum lobortis purus id nisi mattis posuere. Praesent sagittis justo quis nibh ullamcorper, eget elementum lorem consectetur. Pellentesque eu consequat justo, eu sodales eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
     image: {
       large: 'img/pic4.jpg',
-      medium: 'thumbnails/pic4.jpg',
+      medium: '/thumbnails/pic4.jpg',
     },
   },
   {
@@ -50,7 +50,7 @@ const picArray = [
       'Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Vestibulum tincidunt sapien eu ipsum tincidunt pulvinar. Donec dignissim tincidunt nisl, non scelerisque massa pharetra ut. ',
     image: {
       large: 'img/pic5.jpg',
-      medium: 'thumbnails/pic5.jpg',
+      medium: '/thumbnails/pic5.jpg',
     },
   },
   {
@@ -60,7 +60,7 @@ const picArray = [
       'Sed vel velit ante. Aenean quis viverra magna. Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Phasellus imperdiet nunc tincidunt molestie vestibulum. Donec dictum suscipit nibh.',
     image: {
       large: 'img/pic6.jpg',
-      medium: 'thumbnails/pic6.jpg',
+      medium: '/thumbnails/pic6.jpg',
     },
   },
   {
@@ -70,7 +70,7 @@ const picArray = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales enim eget leo condimentum vulputate. Sed lacinia consectetur fermentum. Vestibulum lobortis purus id nisi mattis posuere. Praesent sagittis justo quis nibh ullamcorper, eget elementum lorem consectetur. Pellentesque eu consequat justo, eu sodales eros.',
     image: {
       large: 'img/pic7.jpg',
-      medium: 'thumbnails/pic7.jpg',
+      medium: '/thumbnails/pic7.jpg',
     },
   },
   {
@@ -80,7 +80,7 @@ const picArray = [
       'Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Vestibulum tincidunt sapien eu ipsum tincidunt pulvinar. Donec dignissim tincidunt nisl, non scelerisque massa pharetra ut. Sed vel velit ante. Aenean quis viverra magna. ',
     image: {
       large: 'img/pic8.jpg',
-      medium: 'thumbnails/pic8.jpg',
+      medium: '/thumbnails/pic8.jpg',
     },
   },
   {
@@ -90,20 +90,13 @@ const picArray = [
       'Praesent eget cursus urna. Ut rhoncus interdum dolor non tincidunt. Sed vehicula consequat facilisis. Pellentesque pulvinar sem nisl, ac vestibulum erat rhoncus id. Phasellus imperdiet nunc tincidunt molestie vestibulum. Donec dictum suscipit nibh. Sed vel velit ante. Aenean quis viverra magna. ',
     image: {
       large: 'img/pic9.jpg',
-      medium: 'thumbnails/pic9.jpg',
+      medium: '/thumbnails/pic9.jpg',
     },
   },
 ];
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
-
     useEffect ( () => {
       const pictures = document.getElementById("pictures");
-      const images = importAll(require.context('./t5/img', false, /\.(png|jpe?g|svg)$/));
         picArray.map(e => {
           let articleElem = document.createElement("article");
           let h2Elem  = document.createElement("h2");
@@ -117,7 +110,7 @@ function importAll(r) {
           let imgElem = document.createElement("img");
           let figcaptionElem = document.createElement("figcaption");
           
-          imgElem.src = e.image.medium;
+          imgElem.src = process.env.PUBLIC_URL + e.image.medium;
           console.log(imgElem.src)
           imgElem.alt = e.title;
           figcaptionElem.innerText  = e.caption;
