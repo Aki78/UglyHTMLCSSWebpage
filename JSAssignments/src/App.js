@@ -40,6 +40,8 @@ import M3Assignment7 from './Module3/assignment7'
 import M3Assignment8 from './Module3/assignment8'
 import M3Assignment9 from './Module3/assignment9'
 import M3Assignment10 from './Module3/assignment10'
+import M3Assignment11 from './Module3/assignment11'
+import M4 from './Module4/M4'
 
 import NavBar from './NavBar'
 
@@ -47,13 +49,10 @@ const App = () => {
   return (
     <>
 
-          <Routes >
-            <Route path = "App/*" element={<NavBar/>}/>
-          </Routes >
+            <NavBar/>
         <div class="right">
 
           <Routes >
-            <Route path = "App" >
               <Route path="M1Assignment1" element={<M1Assignment1 />} />
               <Route path="M1Assignment2" element={<M1Assignment2 />} />
               <Route path="M1Assignment3" element={<M1Assignment3 />} />
@@ -84,14 +83,11 @@ const App = () => {
               <Route path="M3Assignment8" element={<M3Assignment8 />} />
               <Route path="M3Assignment9" element={<M3Assignment9 />} />
               <Route path="M3Assignment10" element={<M3Assignment10 />} />
+              <Route path="M3Assignment11" element={<M3Assignment11 />} />
+              <Route path="M4" element={<M4/>} />
             <Route path="*" element={<h1>Not Found</h1>} />
-            </Route>
           </Routes>
         </div>
-        <Routes>
-            {/* <Route path="img/pic1.jpg" element={<img src={require("./Module3/t5/img/pic1.jpg")} />} />
-            <Route path="img/pic2.jpg" element={<img src="/public/img/pic1.jpg" />} /> */}
-        </Routes>
     </>
 
   )

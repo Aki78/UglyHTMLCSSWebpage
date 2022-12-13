@@ -43,6 +43,11 @@ const NavBar = () => {
               <li><Link to="M3Assignment8" >Assignment 8</Link></li>
               <li><Link to="M3Assignment9" >Assignment 9</Link></li>
               <li><Link to="M3Assignment10" >Assignment10</Link></li>
+              <li><Link to="M3Assignment11" >Assignment11</Link></li>
+            </ul>
+            <h3>Module 4</h3>
+            <ul>
+              <li><Link to="M4" >Assignment</Link></li>
             </ul>
           </div>
         </div>

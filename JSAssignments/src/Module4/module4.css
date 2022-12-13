@@ -1,0 +1,50 @@
+
+html{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+input {
+    width: 100%;
+    margin: 10%;
+}
+
+button {
+    width: 50%;
+    height: 50%;
+    color: rgb(200, 200, 200);
+    background-color: rgb(100, 100, 100);
+    border-radius: 10%;
+}
+
+.search_bar {
+    position: apsolute;
+    text-align: right;
+    padding: 20%;
+    background-color: rgb(0, 0, 0);
+    margin-top: -150% ;
+}
+
+.search_bar #search_box {
+    justify-content: center;
+    text-align: center;
+    margin-right: 20%;
+    border-radius: 5%;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20%;
+    gap: 1%;
+    text-align: center;
+}
+
+article a {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(0, 100, 200);
+}
